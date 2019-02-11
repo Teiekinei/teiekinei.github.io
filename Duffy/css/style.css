@@ -1,0 +1,78 @@
+h1{
+	font-family: Segoe Print;
+}
+
+div, ul, p, h3,table{
+	font-family: Calibri;
+}
+
+a {
+    text-decoration:none;
+    color: brown;
+}
+
+body{
+	background:url(../img/bg01.jpg);
+	background:url(../img/bg01.gif);
+	background-attachment:fixed;
+}
+
+#topics{
+	min-height:460px;
+}
+#topics img{
+	display: flex;
+	justify-content: center;
+	max-width: 960px;
+	margin: 20px auto;
+	width: 100%;
+}
+
+#topics .topics_ti{
+	width:40%;
+	max-width:400px;
+}
+
+footer img{
+	display: flex;
+	justify-content: center;
+	align-items:flex-end;
+	margin: 0 auto;
+	width: 100%;
+	margin-top:100px;
+	max-height:185px;
+}
+#kv img, #goods_ti img{
+	display: flex;
+	justify-content: center;
+	max-width: 960px;
+	margin: 0 auto;
+	width: 100%;
+	margin-top: 50px;
+}
+
+body #goods{
+	margin-top: 50px;
+	display: flex;
+	justify-content: space-around;
+	flex-flow: row wrap;
+	background-color: white-blue center;
+}
+.pd{
+	display: flex;
+	justify-content: center;
+	flex-flow: column nowrap;
+	margin: 10px 10px;
+}
+.pd img{
+	max-width: 300px;
+	width: 100%;
+	height: 100%;
+}
+
+.pd p{
+	text-align: center;
+	line-height: 0;
+	font-weight: bold;
+	font-size:20px;
+}

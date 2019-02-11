@@ -1,0 +1,112 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="ja" xml:lang="ja" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-language" content="ja" />
+<title>東京ディズニーリゾート・オフィシャルウェブサイト</title>
+<meta name="author" content="(C)東京ディズニーリゾート" />
+<meta name="description" content="東京ディズニーリゾートでは、遊ぶこと、泊まること、食べること、ショッピング、すべてがエンターテイメント！東京ディズニーランド、東京ディズニーシーの2つのテーマパークを中心とした滞在型テーマリゾートです。" />
+<meta name="keywords" content="東京,ディズニーリゾート,ディズニーランド,ディズニーシー,TDR,TDL,TDS,テーマパーク,パレード,ショー,キャラクター" />
+<meta name="title" content="" />
+<meta name="robots" content="ALL" />
+<meta name="copyright" content="Disney All right reserved." />
+<!--css-->
+<meta http-equiv="content-style-type" content="text/css">
+<style type="text/css">
+BODY {
+	min-width:950px;
+	color:#333333;
+	background: #FFFFFF;
+	font-size:10pt;
+	margin:0;
+	padding:0;
+	text-align:center;
+	line-height:1.4;
+}
+UL, LI, P, DL, DT, DD {
+	border:none;
+	list-style:none;
+	margin:0;
+	padding:0;
+}
+H1, H2, H3, H4, H5, H6 {
+	color:#002692;
+	margin:0 auto;
+	border:none;
+	padding: 0;
+}
+A:link {text-decoration:underline; color:#0033FF }
+A:visited {text-decoration:underline; color:#0033FF }
+A:active {text-decoration:underline; color:#0033FF }
+A:hover {text-decoration:underline; color:#FF00FF }
+
+#container {
+	padding-bottom:20px;
+}
+
+#header {
+	clear:both;
+	width:950px;
+	margin:0 auto;
+	padding:20px 0;
+}
+#footer {
+	clear:both;
+	background:#358ce4;
+	width:950px;
+	margin:0 auto;
+	padding:8px 0;
+	color:#ffffff;
+}
+#footer .copylight {
+	text-align:center;
+}
+
+#main {
+	_zoom: 1;
+}
+
+#contents {
+	width:950px;
+	height:auto !important;
+	min-height:650px;
+	_height:650px;
+	margin:0 auto;
+	text-align:left;
+	_zoom: 1;
+}
+#contents h1 {
+	font-size:20pt;
+	font-family: Arial Black, Gadget, sans-serif,"HGPｺﾞｼｯｸE","ＭＳ Ｐゴシック","ＭＳ ゴシック", Osaka;
+	padding:20px 0;
+	text-align:center;
+}
+</style>
+</head>
+
+<body onload="self.window.focus()">
+<div id="container">
+<!-- main -->
+<div id="main">
+<!-- content -->
+<div id="contents">
+<h1><font color="#ff0000">東京ディズニーリゾートからのお知らせ</font></h1>
+<div><p style="text-align: center; ">東京ディズニーリゾート・オフィシャルウェブサイトは、現在アクセスできなくなっております。<br />
+しばらく時間をおいてから、再度アクセスしていただきますようお願いいたします。<br />
+<br />
+This site is temporarily unavailable.<br />
+Please try back again later.</p></div>
+</div>
+<!-- //content -->
+
+</div>
+<!-- //main -->
+<!-- TDR footer -->
+<div id="footer">
+<p class="copylight">(c) Disney All right reserved.</p>
+</div>
+<!-- //TDR footer -->
+
+</div>
+</body>
+</html>
