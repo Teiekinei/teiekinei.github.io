@@ -1,0 +1,41 @@
+a{
+	text-decoration: none;
+}
+body{
+	margin: 0 auto;
+}
+.zone{
+	color:#FFF;
+    font-size:1em;
+    transition: all 0.3s linear;
+}
+.zone:hover {
+    -webkit-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -moz-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    -o-box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+    box-shadow:rgba(0,0,0,0.8) 0px 5px 15px, inset rgba(0,0,0,0.15) 0px -10px 20px;
+}
+
+nav{
+	display: flex;
+    list-style: none;
+    margin: 0;
+    font-size: 0.7em;
+	background-color: #ff9999;
+}
+
+@media only screen and (max-width: 600px) {
+    nav {
+        font-size: 0.5em;
+        padding: 0;
+    }
+}
+nav li{
+	list-style: none;
+	display: inline-flex;
+	padding: 20px;
+}
+
+nav .right{
+	margin-left: auto;
+}
