@@ -416,18 +416,22 @@ a:hover, a:focus, a:active {
   height:3rem;
   margin-bottom: 1rem;
 }
-@media(max-width: 767px){
-  .inc_logo{
-      height: 5vh;
-  }
-}
 .edu_logo{
   width: 40rem;
   margin:0 auto;
 }
 @media(max-width: 767px ){
+  .inc_logo{
+      height: 7vh;
+  }
   .edu_logo{
     width:80vw;
+  }
+  #experience div{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
   }
 }
 .portfolio-item .caption button {
