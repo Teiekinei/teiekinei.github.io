@@ -269,7 +269,25 @@ h6 {
   font-size: 1.2rem;
   margin:13rem 0;
 }
-
+@media (max-width: 991px ){
+  .portfolio-item .caption .caption-content{
+    margin:0 1rem;
+  }
+  .portfolio-item .caption .caption-content h2{
+    margin-top:1rem;
+  }
+  .portfolio-item .caption .caption-content p{
+    margin-top:50%;
+  }
+}
+@media (max-width: 550px ){
+  .portfolio-item .caption .caption-content{
+    margin:0 1rem;
+  }
+  .portfolio-item .caption .caption-content p{
+    margin-top:44%;
+  }
+}
 @media (min-width: 992px) {
   .portfolio-item {
     max-width: none;
@@ -397,18 +415,42 @@ a:hover, a:focus, a:active {
   height:3rem;
   margin-bottom: 1rem;
 }
+@media(max-width: 767px){
+  .inc_logo{
+      height: 5vh;
+  }
+}
 .edu_logo{
   width: 40rem;
   margin:0 auto;
 }
-.portfolio-item .caption button{
+@media(max-width: 767px ){
+  .edu_logo{
+    width:80vw;
+  }
+}
+.portfolio-item .caption button {
   border-radius: 100px;
-  padding: 0.1rem 0.3rem;
-  margin: 0.1rem;
+  padding: 0.1px 5px;
+  margin: 1px;
+}
+@media(max-width: 990px ){
+  .portfolio-item .caption .clickbutton{
+    margin-top:60%!important;
+  }
+}
+@media(max-width: 550px ){
+  .portfolio-item .caption .clickbutton{
+    margin-top:53%!important;
+  }
+  .portfolio-item .caption button {
+    font-size: 14px;
+  }
 }
 .exp-area{
   margin-bottom: 2rem;
 }
+
   .logo-item {
     max-width: none;
     margin: 0 -40px; 
@@ -442,3 +484,4 @@ a:hover, a:focus, a:active {
   .rounded-circle{
 
   }
+
