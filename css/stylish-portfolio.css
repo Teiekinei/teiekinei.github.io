@@ -282,11 +282,11 @@ h6 {
 }
 @media (max-width: 550px ){
   .portfolio-item .caption .caption-content{
-    margin:0 1rem;
+    margin-left:12px;
   }
   .portfolio-item .caption .caption-content p{
     margin-top:44%;
-    font-size: 1em;
+    font-size: 15px;
   }
 }
 @media (min-width: 992px) {
@@ -450,6 +450,11 @@ a:hover, a:focus, a:active {
   }
   .portfolio-item .caption button {
     font-size: 13px;
+  }
+}
+@media(max-width: 550px ){
+  .portfolio-item .caption .clickbutton_p{
+    margin-top:35%!important;
   }
 }
 .exp-area{
