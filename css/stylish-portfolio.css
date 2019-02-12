@@ -422,7 +422,7 @@ a:hover, a:focus, a:active {
 }
 @media(max-width: 767px ){
   .inc_logo{
-      height: 7vh;
+      height: 4vh;
   }
   .edu_logo{
     width:80vw;
@@ -449,7 +449,7 @@ a:hover, a:focus, a:active {
     margin-top:53%!important;
   }
   .portfolio-item .caption button {
-    font-size: 14px;
+    font-size: 13px;
   }
 }
 .exp-area{
