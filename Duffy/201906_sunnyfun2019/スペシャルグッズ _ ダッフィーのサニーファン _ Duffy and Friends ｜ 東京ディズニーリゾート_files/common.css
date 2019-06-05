@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+body{
+  -webkit-highlight: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: text;
+  -webkit-text-size-adjust: 100%;
+  -webkit-overflow-scrolling: touch;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+}
+.clearfix {
+  display: inline-block;
+  /* Hides from IE-mac \*/
+  *zoom: 1;
+  display: block;
+  /* End hide from IE-mac */
+}
+.clearfix:after {
+  content: " ";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+
+/*--- font ---*/
+#contentMain a{
+	color:#82efd7;}
+#contentMain a:link,
+#contentMain a:active,
+#contentMain a:visited{
+	text-decoration:underline;}
+#contentMain a:hover{
+	text-decoration:none;}
+.fs-s,
+.note,
+.note-list,
+.caption {
+    font-size: 85.75%;}
+.fs-l {
+	font-size:114.3%;}
+.fs-ll {
+	font-size:128.5%;}
+.fw-normal {
+  font-weight: normal;}
+.fw-bold {
+  font-weight: bold;}
+.note {
+    padding: 5px 0;}
+.att{
+	color:#ff5129;}
+.em01{
+	color:#9afbff;}
+.ic-star{
+	color:#d0a638;}
+.caption{
+	display:block;
+	text-align:right;
+	padding:3px 0 0}
+.mvBox{
+  position: relative;
+  padding-bottom: 55.5%;
+  height: 0;
+  overflow: hidden;}
+.mvBox iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;}
+	
+/*--- layout ---*/
+.wrap{
+	overflow:hidden;}
+#contentMain{
+	text-align:center;}
+ul[class] {
+  list-style: none;}
+ul.note-list,
+ul.note-list-m {
+	clear:both;}
+ul.note-list li,
+ul.note-list-m li {
+	text-indent: -1em;
+	padding-left: 1em;
+	margin:0 0 .5em;
+	text-align: left;}
+.list {
+	clear: both;}
+ul.list li {
+	line-height:37px;
+	text-indent: -1em;
+	padding: 0 0 0 1em;
+	margin:0 0 2px;}
+dl.list {
+	line-height:37px;}
+dl.list dt {
+	clear:both;
+	float: left;}
+dl.list dt:before {
+	content:"";
+	width:34px;
+	height:37px;
+	background:url(../images/ic_star01.png) 0 50% no-repeat;
+	display:inline-block;
+	vertical-align: middle;}
+dl.list dd {
+	display:table;
+/*	float: left;*/}

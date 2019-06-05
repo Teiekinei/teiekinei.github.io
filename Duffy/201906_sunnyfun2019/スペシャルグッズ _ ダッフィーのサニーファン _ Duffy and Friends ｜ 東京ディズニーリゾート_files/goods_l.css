@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+#contentMain .content {
+	padding-top: 1px;
+}
+
+#contentMain .content .note-list li.link_txt{
+	margin: 32px 0 32px;
+}
+
+#contentMain .content .image_box {
+    margin-bottom: 50px;
+}

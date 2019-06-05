@@ -1,0 +1,39 @@
+var jsMultipleSubmitGuardFlag = false;
+function jsMultipleSubmitGuard() {
+	if (jsMultipleSubmitGuardFlag) {
+		return false;
+	}
+	jsMultipleSubmitGuardFlag = true;
+	return true;
+}
+jQuery(window).load(function() {
+	jQuery('a.pbOpenNewWindow').each(function() {
+		var a = jQuery(this);
+		if (! a.data('_pbnw')) {
+			a.data('_pbnw', true);
+			a.click(function() {
+				if (this.href) {
+					open(this.href);
+					return false;
+				}
+			});
+		}
+	});
+});
+function loadAsyncBlock(pageId, blockId, errMsg) {
+    jQuery.ajax({
+    	type: "get",
+    	url: pbGlobalAliasBase + 'view_ajax.php?pageId=' + pageId + '&blockId=' + blockId,
+    	async: true,
+    	dataType : 'html',
+    	scriptCharset: 'utf-8',
+    	success: function(data, textStatus, jqXH) {
+    		jQuery('#pbAjaxBlock' + blockId).replaceWith(data);
+    	},
+    	error: function(data, textStatus, jqXH) {
+    		if (errMsg) {
+        		jQuery('#pbAjaxBlock' + blockId).html(errMsg);
+    		}
+    	}
+    });
+}

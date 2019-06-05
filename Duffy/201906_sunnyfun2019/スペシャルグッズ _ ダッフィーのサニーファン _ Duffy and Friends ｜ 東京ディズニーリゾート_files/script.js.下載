@@ -1,0 +1,295 @@
+if(is_sphone()) {
+	responsive();
+}
+
+
+$(function(){
+	if(!is_sphone()) {
+		$(".display-sp").remove();
+	} else {
+		$(".display-pc").remove();
+	}
+	if (window.location.hash && $(window.location.hash).length != 0) {
+		$('html,body').animate({scrollTop: 0}, "slow").addClass('hashscroll');
+	}
+
+	/* scroll */
+	if(is_sphone()) {
+		/*$("#bottomMenu .gotoTop").bind("click",function(){
+			window.scrollTo(0,0);
+		});*/
+		changeTxt();
+	}
+	
+	//load
+	$(window).on("load",function(){
+		$("img.lazy").lazyload({
+			threshold: 200,
+			effect : "fadeIn"
+		});
+		$("img.lazy2").lazyload({
+			event : "imgreload"
+		});
+		$(".slide-img.gallery").each(function() {
+			if ($(this).find('li').length > 1)
+			$(this).lightSlider({
+				gallery:true,
+				item:1,
+				loop:true,
+				speed:1000,
+				mode: "fade",
+				onBeforeSlide: function (el) {
+					if(!$(this).find("img.lazy2").length==0)
+					$(this).find("img.lazy2").trigger("imgreload").removeClass('lazy2')
+					}
+			});
+        });
+		if(is_sphone()) {
+			setTimeout(function(){
+				loadscroll();
+			},1000);
+		} else {
+			smartRollover();
+			loadscroll();
+		}
+		//loadsection();
+		mainNav();
+		preload('images/goods_tx01.png', 'images/close_btn.png');
+		pageLink();
+		sns();
+	});
+});
+
+ $(window).on("message",function(e){
+		 $(function () {
+				 if ($("#menuframe").length !== 0) {
+						 $("#menuframe").css({'height': e.originalEvent.data  + 'px'});
+				 }
+		 });
+ });
+
+// コンテンツエリアまで自動スクロール
+function loadscroll() {
+	var targetOffset;
+	if (window.location.hash && $(window.location.hash).length != 0) {
+			targetOffset = $(window.location.hash).offset().top;
+			$('html,body').stop().animate({scrollTop: targetOffset}, "slow");
+		$(window).scroll(function() {
+			_targetOffset = $(window.location.hash).offset().top;
+			if (targetOffset != _targetOffset && $('html').hasClass('hashscroll'))
+			$('html,body').stop().animate({scrollTop: _targetOffset}, "slow", function(){$('.hashscroll').removeClass('hashscroll')});
+		});
+		
+	} else {
+		if(is_sphone())
+		targetOffset = $('#contentMain').offset().top;
+		else if($('#topHeader').length != 0)
+		targetOffset = $('#topHeader').offset().top;
+		else
+		targetOffset = $('#contentMain').offset().top;
+		$('html,body').stop().animate({scrollTop: targetOffset}, "slow");
+	}
+}
+
+//pageLink
+function pageLink(){
+	$('a[href^="#"], area[href^="#"]').each(function(){
+		if (!$(this).hasClass("nosmooth")) {
+			$(this).click(function(){
+				var target = $( $(this).attr('href') );
+				if (target.length == 0) {
+					return;
+				}
+				$('html, body').animate({scrollTop: target.offset().top}, "slow");
+				return false;
+			});
+		}
+	});
+}
+
+//dirFileName
+var dirFileName = dirFileName();
+function dirFileName(){
+	var pagePath=window.location.href;
+	var pageFil=pagePath.substring(pagePath.lastIndexOf('/',pagePath.length)+1,pagePath.length);
+	var pageFileName=pageFil.substring(0,pageFil.lastIndexOf ('.'));
+	if (pageFileName == "") pageFileName = "index";
+	return pageFileName;
+}
+
+//Param
+function ParamData(paramname){
+	var Param = window.location.search;
+	var _Param = Param.replace("?","").split("&");
+	var __Param = "";
+	
+	for (var i = 0; i < _Param.length; i++) {
+		var __Param = _Param[i];
+		if (__Param.match(paramname)){
+			return __Param;
+		}
+	}
+}
+
+
+//判別
+function is_sphone () {
+	if (ParamData("sphone")=="sphone"){
+		$("body").addClass("body_spn").removeClass("body_pc");
+		return true;
+	} else {
+		var useragents = [
+			'iPhone',
+			'iPod',
+			'Android.*Mobile',
+			'Blackberry',
+			'IEMobile'
+		];
+		var pattern = new RegExp(useragents.join('|'), 'i');
+		return pattern.test(navigator.userAgent);
+	}
+}
+//スマホ切替
+function responsive() {
+		$('.changeCSS').each(function() {
+			var nowCSS = $(this).attr('href');
+			var newCSS = nowCSS.replace('_l.css','_s.css');
+			$(this).attr('href',newCSS);
+		});
+		$('.imgSP').each(function() {
+			var nowimg = $(this).attr('src');
+			if (nowimg.match('transparent')){
+				var nowimg2 = $(this).attr('data-original');
+				var newimg2 = nowimg2.replace('.','_sp.');
+				$(this).attr('data-original',newimg2);
+			}
+		});
+}
+
+//changeTxt for sp
+function changeTxt(){
+		$('img.changeTxt').each(function() {
+			var altTxt = $(this).attr("alt");	
+			var altTxt_array = altTxt.split(/\r\n|\r|\n/);
+			var len = altTxt_array.length;
+			for (var i = 0; i < len; i++) {
+			altTxt = altTxt.replace(/\n/,'<br />');
+			}
+			$(this).replaceWith(altTxt);
+		});
+		$('.imgSP').each(function() {
+			var nowimg = $(this).attr('src');
+			if (!nowimg.match('transparent')){
+				var newimg = nowimg.replace('.','_sp.');
+				$(this).attr('src',newimg);
+			}
+			else{
+				var nowimg = $(this).attr('data-original');
+				var newimg = nowimg.replace('.','_sp.');
+				$(this).attr('data-original',newimg);
+			}
+		});
+}
+
+/*function loadsection(){
+	var readyY = $(window).height() + 200;
+	
+	$(window).scroll(function() {
+		var readyY = $(window).height() + 200;
+	
+	$(window).scroll(function() {
+		var scrollY = $(document).scrollTop();
+
+		if(!$('#blog').hasClass('secActive') && ($('#blog').offset().top - readyY) < scrollY) {
+			if(!is_sphone())
+			display_tdr_blog('30','2','1');
+			else
+			sp_display_tdr_blog('30','1');
+			$('#blog').html('<div id="blogpartsWrap"></div>').addClass('secActive');
+		}
+	});
+});
+}*/
+
+//sns
+function sns(){
+
+	var Url = $("meta[property='og:url']").attr("content");
+	var Text = encodeURI($("meta[property='og:title']").attr("content"));
+
+	var snshtml = '<ul class="snsBtn clearfix">'
+	+'<li class="snsBtn01"><a href="http://twitter.com/share?count=horizontal&amp;original_referer='+ Url +'&amp;text='+ Text +'&amp;url='+ Url +'" onclick="window.open(this.href,\'tweetwindow\',\'width=550,height=450,personalbar=0,toolbar=0,scrollbars=1,resizable=1\');return false;"><img src="images/sns_btn02.png" width="55" height="auto" alt="Twitter" /></a></li>'
+	+'<li class="snsBtn02"><a href="http://www.facebook.com/share.php?u='+ Url +'" onclick="window.open(this.href,\'facebookwindow\',\'width=550,height=450,personalbar=0,toolbar=0,scrollbars=1,resizable=1\');return false;"><img src="images/sns_btn01.png" width="55" height="auto" alt="facebook" /></a></li>'
+	+'<li class="snsBtn03 display-sp"><a href="http://line.naver.jp/R/msg/text/?'+ Text +' '+ Url +'"><img src="images/sns_btn03.png" alt="LINEで送る" /></a></li>'
+	+'</ul>';
+
+	var snshtmlTxt = '<div class="snsCap"><h2>＜ご利用にあたって＞</h2><ul class="note-list"><li>・ソーシャルメディアサイトは、13才以上の方がご利用になれます。</li><li>・上記、リンク先のページは、東京ディズニーリゾートのオフィシャルウェブサイト外のページです。</li><li>・各ウェブサイトのご利用条件、個人情報保護方針等をご確認ください。他のお客様等のご迷惑となる掲載は固くお断りいたします。</li></ul></div>';
+	var snshtmlTxtImg = '<div class="snsCap"><ul class="note-list"><li><img src="images/sns_txt.png" alt="＜ご利用にあたって＞ ・ソーシャルメディアサイトは、13才以上の方がご利用になれます。 ・上記、リンク先のページは、東京ディズニーリゾートのオフィシャルウェブサイト外のページです。 ・各ウェブサイトのご利用条件、個人情報保護方針等をご確認ください。他のお客様等のご迷惑となる掲載は固くお断りいたします。" /></li></ul></div>';
+
+	if(!is_sphone()) {
+		if ($('#sns').find('.snsBtn').length == 0) $('#sns').append(snshtml + snshtmlTxtImg);
+		/*$(".snsBtn").hover(function () {
+			$(this).next().stop().fadeIn("fast");
+		},
+		function () {
+			$(this).next().fadeOut("fast");
+		});*/
+	} else {
+		$('#sns').html(snshtml + snshtmlTxt);
+	}
+}
+
+// ROLLOVER
+function smartRollover(){
+
+	$( "img.rollover" ).each(function(){
+		var src = $(this).attr("src");
+		if (!src.match('transparent'))
+		(new Image()).src = src.replace(".", "_on.");
+	});
+	$( "img.rollover" ).on("mouseover", function (){
+		var src = $(this).attr("src");
+		if (!src.match('transparent'))
+		$(this).attr( "src", src.replace(".", "_on.") );
+	} );
+	$( "img.rollover" ).on("mouseout", function (){
+		var src = $(this).attr("src");
+		if (!src.match('transparent'))
+		$(this).attr( "src", src.replace("_on.", ".") );
+	} );
+	
+	$('.over').hover(function() {
+		$(this).stop().fadeTo(300, 0.8);
+	}, function() {
+		$(this).stop().fadeTo(500, 1);
+	});
+}
+
+//preload
+function preload() {
+	for(var i = 0; i< arguments.length; i++){
+		$("<img>").attr("src", arguments[i]);
+	}
+}
+
+// mainNav
+function mainNav(){
+	var mainNavY = $(".mainNav").offset().top;
+
+    $(window).scroll(
+    	function() {
+            
+            var top = 0;
+    		
+    		top = $(window).scrollTop();
+			
+            if (top > mainNavY) {
+               $(".mainNav").css({'position': 'fixed', 'top': '0px'});
+            } else {
+           	   $(".mainNav").css({'position': 'relative'});
+            } 
+        return false;
+            
+			}
+   	);
+}

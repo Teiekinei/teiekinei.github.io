@@ -1,0 +1,85 @@
+// JavaScript Document
+$(window).on("load",function(){
+	//DuffyTw();
+});
+	
+function DuffyTw(){
+var DuffyTwPath = window.location.pathname,
+		DuffyTwPath1 = 'treasure/fantasy/duffy',
+		DuffyTwPath2 = 'special/duffy';
+var DuffyTwCookie = 'twitter_following';
+var _DuffyTwPath,DTCountPath,DTCookiePath;
+var date = new Date();
+var midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 23, 59, 59);
+
+	if(DuffyTwPath.match(DuffyTwPath1)) {
+		_DuffyTwPath = DuffyTwPath1;
+	} else if (DuffyTwPath.match(DuffyTwPath2)) {
+		_DuffyTwPath = DuffyTwPath2;
+	}
+
+	DuffyTwPath = DuffyTwPath.split(_DuffyTwPath)[1].split('/')[1].split('/')[0];
+	if(DuffyTwPath.match('.html'))
+		DTCountPath = _DuffyTwPath;
+	else
+		DTCountPath = _DuffyTwPath + '/' + DuffyTwPath;
+	DTCookiePath = '/' + _DuffyTwPath + '/';
+
+	if(!$.cookie(DuffyTwCookie)){
+		$('head').append('<link rel="stylesheet" href="/treasure/fantasy/duffy/parts/twitter_following.css" type="text/css">');
+		$('body').append('<div id="btn-duffy-twitter"><a href="https://twitter.com/WithDuffy_TDS" target="_blank" onmousedown="dataLayer.push({event: \'trackClick\', clickParams: {category: \'リンククリック\', action: \'' + DTCountPath + '\', label: \'\'}});"><img src="/treasure/fantasy/duffy/parts/images/tw_bnr.png" alt="ダッフィーの公式Twitterアカウントをフォローしよう!" class="pc"><img src="/treasure/fantasy/duffy/parts/images/tw_bnr_sp.png" alt="ダッフィーの公式Twitterアカウントをフォローしよう!" class="spn"></a></div>');
+		$.cookie(DuffyTwCookie , "true" , { expires: midnight, path: DTCookiePath });
+		btnscroll();
+	
+	}
+	
+	$('.CookieClear').click(function(){
+		$.removeCookie(DuffyTwCookie, { path: DTCookiePath });
+		location.reload();
+	});
+	
+}
+
+
+/* btnscroll */
+function btnscroll() {
+	var $ptBtn = $('#btn-duffy-twitter');
+	var $ptFlag = false;
+	var $ptTime;
+	if($('body').hasClass('body_spn')){
+		var $ptMinY = 200;
+	} else {
+		var $ptMinY = 500;
+	}
+	
+	function ptWait(){
+		$ptTime = setTimeout(function(){
+			$ptFlag = true;
+			ptShow();
+		},1000)
+	};
+	function ptShow(){
+		$ptBtn.stop(true,false).animate({bottom:0},1000,'quart');
+	};
+	function ptHide(){
+		$ptFlag = false;
+		$ptBtn.stop(true,false).animate({bottom:-200},1000, 'quart');
+	};
+
+	$(window).scroll(function() {
+		clearTimeout($ptTime);
+		var scrollTop = $(document).scrollTop();
+		if(scrollTop < $ptMinY){
+			ptHide();
+		} else if($ptFlag == true){
+			ptHide();
+		} else {
+			ptWait();
+		}
+	});
+	var $ptBtnL = $ptBtn.find('a');
+	
+	jQuery.easing.quart = function (x, t, b, c, d) {
+	return -c * ((t=t/d-1)*t*t*t - 1) + b;
+	}; 
+}
