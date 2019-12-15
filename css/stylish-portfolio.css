@@ -412,6 +412,11 @@ a:hover, a:focus, a:active {
   border: 0.5rem solid #1D809F;
   margin-bottom: 3rem;
 }
+.profileimg:hover, .profileimg:focus, .profileimg:active {
+  border-color: #6EA4BF !important;
+  transform : scale(1.2);
+  transform : rotate (45deg);
+}
 .inc_logo{
   height:3rem;
   margin-bottom: 1rem;
