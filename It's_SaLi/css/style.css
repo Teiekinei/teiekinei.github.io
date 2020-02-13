@@ -1,0 +1,521 @@
+@import url(https://fonts.googleapis.com/css?family=Pacifico);
+@import url('https://fonts.googleapis.com/css?family=Dancing+Script&display=swap');
+
+
+
+
+
+
+
+/*------------svg------------*/
+#svg_26, #svg_21, #svg_37, #svg_40{
+    animation-iteration-count: infinite;
+    animation-name: eyes;
+    animation-duration: 3s;
+}
+@keyframes eyes {
+  0%, 5% {
+    transform: rotate(0) translateX(0) translateY(0);
+  }
+  10%, 15% {
+    transform: rotate(0deg) translateX(2px) translateY(1px);
+  }
+  20%, 25% {
+    transform: rotate(0) translateX(0) translateY(0);
+  }
+  30%, 35% {
+    transform: rotate(0deg) translateX(-2px) translateY(1px);
+  }
+  40%, 45% {
+    transform: rotate(0) translateX(0) translateY(0);
+  }
+  50%, 55% {
+    transform: rotate(0) translateX(2px) translateY(1px);
+  }
+  60%, 100% {
+    transform: rotate(0) translateX(0) translateY(0);  
+  }
+}
+
+#svg_44, #svg_45{
+    animation-iteration-count: infinite;
+    animation-name: toy;
+    animation-duration: 3s;
+}
+@keyframes toy {
+   0%, 5% {
+    transform: translateX(0) translateY(0);
+  }
+  10%, 15% {
+    transform: skew(10deg) translateX(0px) translateY(0px);
+  }
+  30%, 35% {
+    transform: skew(-10deg) translateX(0px) translateY(0px);
+  }
+  50%, 55% {
+    transform: skew(10deg) translateX(0px) translateY(0px);
+  }
+  60%, 100% {
+    transform: translateX(0) translateY(0);  
+  }
+}
+
+/*------------svg------------*/
+
+/*------------appad------------*/
+@charset "UTF-8";
+
+#full-section{
+    background-color: #000;
+    min-height: 1500px;
+    font-family: 'Dancing Script', cursive;
+}
+#full-section {
+    width: 100%;
+    position: absolute;
+    overflow: hidden;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    background: #FFD2D2;
+}
+
+
+#full-section .edge-section{
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 1920px;
+}
+#full-section .area{
+    margin: 0 auto;
+    padding: 0 15px;
+    max-width: 1760px;
+    box-sizing: border-box;
+    position: relative;
+}
+#full-section .text{
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+}
+#full-section .text h1{
+    font-size: 70px;
+    font-family: 'Dancing Script', cursive;
+    line-height: 1.2em;
+    margin: 0 0 0.5em 0;
+    color: #fff;
+}
+#full-section .text h2{
+    font-size: 60px;
+    font-family: 'Dancing Script', cursive;
+    line-height: 1.2em;
+    margin: 0 0 0.5em 0;
+    color: #fff;
+}
+#full-section .edge-section-1 h2{ color: #fff !important;}
+#full-section .edge-section-2 h2{ color: #fff !important;}
+#full-section .edge-section-3 h2{ color: #fff !important;}
+#full-section .edge-section-4 h2{ color: #fff !important;}
+#full-section .edge-section-5 h2{ color: #fff !important;}
+#full-section .edge-section-6 h2{ color: #fff !important;}
+
+
+#full-section .text p{
+    font-weight: 300;
+    line-height: 1.5em;
+    margin: 0;
+}
+
+#full-section .edge-section-KV{
+    background: url(../img/02.png) center top/1920px no-repeat;
+    min-height: 787px;
+    height: 100vh;
+    padding: 0 auto;
+
+}
+#full-section .edge-section-KV .text{
+    position: absolute;
+    margin: 30% 0 0 55%;
+    z-index: 999;
+}
+#full-section .edge-section-KV .catsvg{
+    position: absolute;
+    margin: 10% 0 0 0%;
+}
+
+
+#full-section .edge-section-1{
+    background: url(../img/01.jpg) center top/1920px no-repeat;
+    min-height: 787px;
+}
+#full-section .edge-section-1 .text{
+    margin: 15% 0 0 50%;
+}
+
+#full-section .edge-section-2{
+    background: url(../img/02.jpg) center top/1920px no-repeat;
+    min-height: 787px;
+}
+#full-section .edge-section-2 .text{
+    margin: 15% 0 0 0%;
+    width: 50%;
+}
+#full-section .edge-section-2 .text img{
+    max-width: 100%;
+}
+
+
+#full-section .edge-section-3{
+    background: url(../img/03.jpg) center top/1920px no-repeat;
+    min-height: 787px;
+}
+#full-section .edge-section-3 .text{
+    margin: 60px 0 0 32%;
+    width: 40%;
+}
+
+
+
+#full-section .edge-section-4{
+    background: url(../img/04.jpg) center top/1920px no-repeat;
+    min-height: 787px;
+}
+#full-section .edge-section-4 .text{
+    margin: 15% 0 0 50%;
+    width: 40%;
+}
+
+
+#full-section .edge-section-5{
+    background: url(../img/05.jpg) center top/1920px no-repeat;
+    min-height: 892px;
+}
+#full-section .edge-section-5 .text{
+    margin: 25% 0 0 0%;
+    width: 42%;
+}
+
+#full-section .edge-section-6{
+    background: url(../img/06.jpg) center top/1920px no-repeat;
+    min-height: 707px;
+}
+#full-section .edge-section-6 .text{
+    margin: 25% 0 0 0;
+    width: 53%;
+}
+
+footer{
+  background: #FF7575;
+  width:100%;
+}
+
+@media screen and (max-width: 1100px) {
+#full-section .edge-section-3 .text{
+    margin: 680px 0 0px 17%;
+    width: 70%;
+}
+}
+
+
+
+
+@media screen and (max-width: 850px) {
+#full-section .edge-section{
+    background-size: 100%;
+    min-height: auto;
+}
+#full-section .edge-section .text{
+    margin: 42% 0 5% 0;
+    width: 100%;
+}
+#full-section .edge-section-1{
+    background-size: 130%;
+    background-position: left top;
+}
+#full-section .edge-section-1 .text{
+    margin-top: 60%;
+}
+#full-section .edge-section-2{
+    background-size: 130%;
+    background-position: right top;
+}
+#full-section .edge-section-2 .text{
+    margin-top: 65%;
+}
+#full-section .edge-section-3{
+    background-size: 130%;
+    background-position: center top;
+}
+#full-section .edge-section-3 .text{
+    margin-top: 65%;
+}
+#full-section .edge-section-4{
+    background-size: 140%;
+    background-position: right top;
+}
+#full-section .edge-section-4 .text{
+    margin-top: 65%;
+}
+#full-section .edge-section-5{
+    background-size: 150%;
+    background-position: right top;
+}
+#full-section .edge-section-5 .text{
+    margin-top: 65%;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#full-section .upd-content{
+    margin: 0 auto;
+    height: 100%;
+    color: #000;
+    max-width: 900px;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+#full-section .upd-section{
+    margin-bottom: 30px;
+}
+#full-section .upd-section h2{
+    color: #000;
+    font-size: 1.8em;
+    font-weight: normal;
+}
+#full-section .upd-section  > p{
+    line-height: 1.5em;
+    padding: 0 12px;
+}
+#full-section .upd-section a:hover{
+    color: #0a8dd1;
+}
+
+#full-section .upd-section .two-column > div{
+    width: 50%;
+    float: left;
+}
+@media screen and (max-width: 768px) {
+#full-section .upd-section .two-column > div{
+    width: 100%;
+}
+}
+#full-section .upd-section .two-column:after{
+    clear: both;
+    display: block;
+    content: '';
+}
+
+#full-section .upd-section small{
+    font-size: 0.9em;
+    color: #666;
+    display: block;
+    width: 350px;
+    margin: 0 auto;
+}
+
+#full-section .upd-section .two-column .port{
+    max-width: 450px;
+    margin: 0 auto;
+}
+#full-section .upd-section .two-column .port-1{
+    float: left;
+    max-width: 220px;
+}
+#full-section .upd-section .two-column .port-2{
+    float: right;
+    margin-right: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+#full-section .upd-section .three-column > div{
+    width: 33.3%;
+    float: left;
+}
+#full-section .upd-section .three-column:after{
+    clear: both;
+    display: block;
+    content: '';
+}
+
+#full-section .upd-section .three-column img{
+    display: block;
+    margin: 0 auto 15px auto;
+    border: 1px solid #02b1e4;
+}
+
+#full-section .upd-section .three-column p{
+    margin: 0 3%;
+}
+
+#full-section .upd-section .three-column i{
+    display: block;
+    float: left;
+    background: #02b1e4;
+    color: #fff;
+    font-style: normal;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 30px;
+    margin: 0 6px 120px 0;
+}
+
+
+
+@media screen and (max-width: 768px) {
+#full-section .upd-section .three-column > div{
+    width: 100%;
+}
+#full-section .upd-section .three-column img{
+    margin: 0 0 15px 0;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+#full-section .upd-section-1 h2{
+    margin-top: 25%;
+}
+#full-section .upd-section-1 img{
+    max-width: 100%;
+}
+@media screen and (max-width: 768px) {
+#full-section .upd-section-1 h2{
+    margin-top: 20px;
+}
+}
+
+
+
+
+#full-section .upd-section-2{
+    background-color: #eaeaea;
+    padding-top: 30px;
+}
+#full-section .upd-section-2 h2{
+    margin-bottom: 30px;
+}
+#full-section .upd-section-2 .two-column > div:first-child img{
+    float: left;
+}
+#full-section .upd-section-2 .two-column > div:first-child p{
+    float: left;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 0 20px;
+    margin-top: 25%;
+    line-height: 1.6em;
+}
+
+#full-section .upd-section-2 .two-column > div:last-child p{
+    margin-top: 20px;
+}
+
+
+
+@media screen and (max-width: 500px) {
+#full-section .upd-section-2 .two-column > div:first-child p{
+    width: 100%;
+    padding: 0;
+    margin-top: 10px;
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+#full-section .upd-section-3 .upd-content{
+    background: #fff url(../img/mast.png) left top no-repeat;
+    padding-top: 100px;
+}
+#full-section .upd-section-3 h2{
+    text-align: center;
+}
+#full-section .upd-section-3 .three-column{
+    margin-left: 10%;
+    margin-top: 30px;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+#full-section .upd-section-3 .upd-content{
+    padding-top: 60px;
+}
+#full-section .upd-section-3 h2{
+    text-align: left;
+    margin-left: 200px;
+}
+}
+
+
+@media screen and (max-width: 480px) {
+#full-section .upd-section-3 .upd-content{
+    background-position: 0 80px;
+    padding-top: 0;
+}
+#full-section .upd-section-3 h2{
+    margin-left: 0;
+}
+#full-section .upd-section-3 .three-column{
+    margin-top: 180px;
+}
+}
+
+
+
+
+#full-section .back-to-top{
+    height: 50px;
+    width: 50px;
+    display: block;
+    position: fixed;
+    right: 0;
+    bottom: 50px;
+    text-indent: -9999px;
+    background: #fff url(../img/arrow.png) center center no-repeat;
+    display: none;
+}
+/*------------appad------------*/
